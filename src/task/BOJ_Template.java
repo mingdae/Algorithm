@@ -1,4 +1,4 @@
-package Baekjoon;
+package task;
 import java.io.*;
 import java.util.*;
 
@@ -9,7 +9,7 @@ import java.util.*;
  * 
  */
 
-public class BOJ_template {
+public class BOJ_Template {
 	static int n, ans;
 	
 	public static void main(String[] args) throws IOException{
