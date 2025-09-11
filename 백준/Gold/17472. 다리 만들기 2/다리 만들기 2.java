@@ -91,7 +91,6 @@ public class Main {
 		
 		ans = 0;
 		
-		
 		for(int i = 0 ; i < n ; i++) {
 			st = new StringTokenizer(br.readLine());
 			for(int j = 0 ; j < m ; j++) {
@@ -110,8 +109,10 @@ public class Main {
 			}
 		}
 		islandNum--;
+		
 		/* 섬 라벨링 디버깅 */
 //		printMap();
+		
 		
 		 /* 2. 완탐 => 섬 - 섬으로 놓을 수 있는 모든 다리 후보 탐색 */
 //	  		2-0) 0이 아닌 모든 정점에서 탐색 -> 그때의 섬 번호 저장 필요
@@ -198,7 +199,13 @@ public class Main {
 		}
 	}
 	
-	// sy, sx : 출발 좌표, snum : 출발 섬 번호, dir : 방향, len : 다리 길이
+	/*
+	 * dfs : 다리 후보 탐색
+	 * @param sy, sx : 출발 좌표
+	 * @param from : 출발 섬(정점) 번호
+	 * @param dir : 방향
+	 * @param len : 현재 다리 길이
+	 */
 	public static void dfs(int sy, int sx, int from, int dir, int len) {
 		int ny = sy + dy[dir];
 		int nx = sx + dx[dir];
@@ -210,7 +217,7 @@ public class Main {
 		
 		// 종료 조건 : 출발지와 다른 번호의 섬을 만났을 때
 		// 다리 길이가 2이상이면 유효한 다리, 다리 후보 추가
-		// 간선리스트, PQ 추가
+		// PQ 추가
 		if(map[ny][nx] != 0 && map[ny][nx] != from ) {
 			int to = map[ny][nx];
 			if(len >= 2) 
@@ -225,9 +232,7 @@ public class Main {
 		}
 	}
 	
-	
-	
-	
+	/* 디버깅 메소드 */
 	public static void printMap() {
 		for(int i = 0 ; i < n; i++) {
 			for(int j = 0 ; j < m ; j++) {
@@ -240,9 +245,7 @@ public class Main {
 		for(Edge e : pq) {
 			System.out.println("from : " + e.from + " to : " + e.to + " len : " + e.weight);
 		}
-		
 	}
-	
 }
 	
 	
