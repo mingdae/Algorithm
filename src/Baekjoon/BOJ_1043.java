@@ -72,6 +72,12 @@ public class BOJ_1043 {
 			roots[i] = find(root);
 		}
 		
+		for(int i = 0 ; i < m ; i++) {
+			if(roots[i])
+		}
+		
+		
+		
 		
 			
 		System.out.println(ans);
