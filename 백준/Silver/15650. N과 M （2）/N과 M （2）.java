@@ -5,7 +5,6 @@ import java.util.*;
 public class Main {
 	static int n, m;
 	static int[] select;
-	static boolean[] visited;
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -15,7 +14,6 @@ public class Main {
 		n = Integer.parseInt(st.nextToken());
 		m = Integer.parseInt(st.nextToken());
 		select = new int[m];
-		visited = new boolean[n+1];
 		combi(1, 0);
 	}
 	
