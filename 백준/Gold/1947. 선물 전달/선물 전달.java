@@ -16,7 +16,8 @@ public class Main {
 		else {
 			dp[2] = 1;
 			for(int n = 3 ; n <= N; n++) {
-				dp[n] = (((n-1)%MOD) * (((dp[n-1]%MOD) + (dp[n-2]%MOD))%MOD)) % MOD;
+				dp[n] = (n-1) * (dp[n-1] + dp[n-2]);
+				dp[n] %= MOD;
 			}
 			System.out.println(dp[N]);
 		}
