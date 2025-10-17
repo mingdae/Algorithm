@@ -44,7 +44,7 @@ public class Main {
         }
 
         for(int end = 2; end <= n; end++){
-            for(int start = end - 1; start >= 0 ; start--){
+            for(int start = end - 1; start >= 1 ; start--){
                 for(int mid = start; mid < end; mid++){
                     int calc = R[start] * C[mid] * C[end];
                     dp[start][end] = Math.min(dp[start][end], dp[start][mid] + dp[mid+1][end] + calc);
