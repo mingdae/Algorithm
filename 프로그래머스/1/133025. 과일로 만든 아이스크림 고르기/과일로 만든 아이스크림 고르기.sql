@@ -1,0 +1,7 @@
+-- 코드를 입력하세요
+SELECT half.FLAVOR
+FROM FIRST_HALF AS half
+JOIN ICECREAM_INFO AS info
+  ON info.FLAVOR = half.FLAVOR
+WHERE half.TOTAL_ORDER > 3000 AND info.INGREDIENT_TYPE = 'fruit_based'
+ORDER BY half.TOTAL_ORDER DESC;
