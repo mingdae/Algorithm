@@ -1,0 +1,9 @@
+-- 코드를 입력하세요
+SELECT 
+  WAREHOUSE_ID,
+  WAREHOUSE_NAME,
+  ADDRESS,
+  IFNULL(freezer_yn, 'N') AS FREEZER_YN
+FROM FOOD_WAREHOUSE
+WHERE LEFT(ADDRESS,3) = '경기도'
+ORDER BY warehouse_id ASC;
