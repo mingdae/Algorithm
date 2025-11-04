@@ -1,0 +1,26 @@
+# 문제 분석
+/*
+테이블 : PATIENT, DOCTOR, APPOINTMENT
+조건
+    1. 2022년 4월 13일 취소되지 '않은' 
+    2. 흉부외과(CS) 진료 예약 내역
+    3. 진료예약일시 기준 오름차순
+*/
+
+
+SELECT
+  APP.APNT_NO,
+  PAT.PT_NAME,
+  PAT.PT_NO,
+  APP.MCDP_CD,
+  DOC.DR_NAME,
+  APP.APNT_YMD
+FROM APPOINTMENT AS APP
+JOIN DOCTOR AS DOC
+  ON APP.MDDR_ID = DOC.DR_ID
+JOIN PATIENT AS PAT
+  ON APP.PT_NO = PAT.PT_NO
+WHERE DATE(APP.APNT_YMD) = '2022-04-13' 
+  AND APP.APNT_CNCL_YN = 'N'        -- 1. 2022년 4월 13일 취소되지 않은 예약
+  AND APP.MCDP_CD = 'CS'
+ORDER BY APP.APNT_YMD ASC;
